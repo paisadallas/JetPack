@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.john.jetpack.databinding.FragmentThreeBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -36,7 +37,10 @@ class ThreeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
+        binding.btButtonGo.setOnClickListener {
+            findNavController().navigate(R.id.action_threeFragment_to_oneFragment)
+        }
         return binding.root
     }
 

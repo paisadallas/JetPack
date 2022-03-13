@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_secondFragment_to_threeFragment"
             app:destination="@id/threeFragment" />
+        <argument
+            android:name="my_data"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/threeFragment"

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.john.jetpack.databinding.FragmentOneBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -40,7 +41,13 @@ class OneFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        var data= "Sending data"
 
+        binding.btButtonGo.setOnClickListener {
+            val intention = OneFragmentDirections.actionOneFragmentToSecondFragment(data)
+                findNavController().navigate(intention)
+
+        }
         return binding.root
     }
 
